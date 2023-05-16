@@ -1,0 +1,14 @@
+version: "3"
+services:
+  docker-artifact:
+    container_name: docker-artifact-x86
+    entrypoint: "/run.sh"
+    logging:
+      driver: local
+    build:
+      context: .
+      dockerfile: Dockerfile.x86
+    volumes:
+      - ./Volume:${VOLUME}
+
+
